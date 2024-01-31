@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: adventureworks 
+    schema: dl_adventureworks
+    tables:
+      - name: Customer
+      - name: Person
+      - name: Product
+      - name: ProductInventory
+      - name: SalesOrderDetail
+      - name: SalesOrderHeader
+      - name: SalesPerson
+      - name: SalesTerritory
+      - name: ShipMethod
+      - name: Store
+      - name: ProductCategory
+      - name: ProductModel
+      - name: ProductSubcategory
+      - name: SalesTerritoryHistory
+

@@ -17,8 +17,8 @@ table_schema_name_query= """
 select concat(TABLE_SCHEMA,'.', TABLE_NAME)
 from INFORMATION_SCHEMA.TABLES
 where table_name in 
-('Product' ,'SalesPerson','SalesTerritory','Person','Location','SalesPerson','SalesOrderHeader','Customer','ProductInventory','Address',
-'Store','SalesOrderDetail')
+('Product' ,'SalesPerson','SalesTerritory','Person','SalesPerson','SalesOrderHeader','Customer','ProductInventory',
+'Store','SalesOrderDetail','ShipMethod','ProductSubcategory','ProductCategory','ProductModel','SalesTerritoryHistory')
 """
 columns_n ,table_names = sql_server_instance.query(table_schema_name_query)
 df2 = pd.DataFrame(table_names , columns = columns_n)
