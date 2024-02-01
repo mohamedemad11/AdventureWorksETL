@@ -23,5 +23,5 @@ source_3 as (
 )
 
 
-select *
+select * , current_timestamp() as ingestion_timestamp
 from source_3

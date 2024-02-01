@@ -23,5 +23,5 @@ P.Title , P.FirstName , P.MiddleName , P.LastName
     on SP.BusinessEntityID = P.BusinessEntityID
 )
 
-SELECT *
+SELECT * , current_timestamp() as ingestion_timestamp
 FROM source_3 

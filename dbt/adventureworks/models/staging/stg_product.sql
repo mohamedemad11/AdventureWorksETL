@@ -50,7 +50,7 @@ on p.ProductModelID  = pm.ProductModelID
 )
 
 
-select *
+select * , current_timestamp() as ingestion_timestamp
 from source_6
 
 

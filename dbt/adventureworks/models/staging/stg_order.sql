@@ -27,5 +27,5 @@ on H.SalesOrderID = D.SalesOrderID
 
 )
 
-SELECT *
+SELECT * , current_timestamp() as ingestion_timestamp
 FROM source_3
