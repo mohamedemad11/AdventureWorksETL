@@ -2,7 +2,8 @@ with source as (
 
 
 
-    select *
+    select {{ dbt_utils.generate_surrogate_key(['stg_customer.CustomerID']) }} as customer_key 
+    , *
     from {{ref('stg_customer')}}
 )
 

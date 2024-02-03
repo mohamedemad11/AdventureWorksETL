@@ -43,5 +43,5 @@ models:
       +materialized: table
       +schema: dwh_adventureworks
       dim_date:
-        +materialized: view
+        +materialized: table
 

@@ -36,7 +36,8 @@ source_6 as (
 select p.ProductID , p.Name as product_name  , p.Color , 
 p.StandardCost , p.ListPrice , p.Size , p.SizeUnitMeasureCode , p.WeightUnitMeasureCode , p.weight ,
 p.DaysToManufacture , Quantity , ps.name as product_sub_category 
-, pc.name as product_category , pm.name as product_model 
+, pc.name as product_category , pm.name as product_model , row_number () over (partition by p.ProductID) as row_n , current_timestamp() as ingestion_timestamp 
+
 from source p
 left join source_2 pn
 on p.ProductID = pn.ProductID
@@ -50,8 +51,10 @@ on p.ProductModelID  = pm.ProductModelID
 )
 
 
-select * , current_timestamp() as ingestion_timestamp
-from source_6
+select * 
+except (row_n) ,
+from source_6 
+where row_n = 1 
 
 
 

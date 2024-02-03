@@ -3,7 +3,8 @@ with source as (
 
 
 
-    select *
+    select {{ dbt_utils.generate_surrogate_key(['stg_product.ProductID']) }} as product_key 
+    , *
     from {{ref('stg_product')}}
 )
 
