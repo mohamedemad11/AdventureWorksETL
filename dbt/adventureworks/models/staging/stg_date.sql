@@ -1,7 +1,7 @@
 with date_table as (
 select * from unnest(generate_date_array('1990-01-01','2050-01-01',interval 1 day)) as date_day)
 
-select format_date('%F',date_day) as id , date_day as full_date ,
+select format_date('%F',date_day) as id , cast(date_day as datetime) as full_date ,
 extract(year from date_day) as year ,
 extract(month from date_day) as month ,
 extract(week from date_day ) as week ,

@@ -17,7 +17,7 @@ from {{source('adventureworks','SalesOrderDetail')}}
 ,
 source_3 as (
 
-select H.SalesOrderID , OrderDate , ShipDate , CustomerID , SalesPersonID , TerritoryID , ShipMethodID , SubTotal , TaxAmt , Freight , TotalDue , SalesOrderDetailID ,
+select H.SalesOrderID , OrderDate , ShipDate  , CustomerID , SalesPersonID , TerritoryID , ShipMethodID , SubTotal , TaxAmt , Freight , TotalDue , SalesOrderDetailID ,
 ProductID , OrderQty , UnitPrice 
 
 from source H
