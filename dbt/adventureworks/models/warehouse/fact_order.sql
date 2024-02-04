@@ -15,5 +15,6 @@ with source as (
 )
 
 
-select * , 
+select * , min(OrderDate) over (partition by CustomerID) as customer_first_order ,
+            max(OrderDate) over (partition by CustomerID) as customer_last_order
 from source 
